@@ -1,20 +1,20 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import React from "react";
+import {Text} from "react-native";
+import { SafeAreaView } from "react-native-safe-area-context";
+import PrimeiroComponent, { SegundoComponent, TerceiroComponent } from "./components/VariosComponents";
+import estilo from "./components/Estilo";
+import Somar from "./components/Somar";
 
-export default function App() {
-  return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
-  );
+function App(){
+  return(
+    <SafeAreaView style={estilo.container}>
+      <Text style={estilo.textoPadrao}> Nicolas Dobbeck</Text>
+      <PrimeiroComponent></PrimeiroComponent>
+      <SegundoComponent></SegundoComponent>
+      <TerceiroComponent></TerceiroComponent>
+      <Somar num1 ={12} num2={30}/>
+    </SafeAreaView>
+  )
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+export default App
